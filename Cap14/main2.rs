@@ -22,13 +22,13 @@ fn main() {
     println!("Digite Um Número:");
 
     // Cria uma variável mutável para armazenar a entrada do usuário como texto.
-    let mut dsanum = String::new();
+    let mut numero = String::new();
 
-    // Lê uma linha do terminal e armazena na variável `dsanum`.
+    // Lê uma linha do terminal e armazena na variável `numero`.
     io::stdin()
-        .read_line(&mut dsanum)
+        .read_line(&mut numero)
         .expect("Falha ao ler o input");
 
     // Imprime o valor que o usuário digitou.
-    println!("Você Digitou: {}", dsanum);
+    println!("Você Digitou: {}", numero);
 }

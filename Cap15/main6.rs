@@ -17,7 +17,7 @@ fn main() {
     println!("{}", s2);
 
     // Criando uma nova string e atribuindo-a a s3
-    let s3 = String::from("Data Science Academy");
+    let s3 = String::from("Ciência de dados");
 
     // Emprestando s3 de forma imutável para a função calcula_comprimento
     // A referência imutável permite que a função acesse os dados da string sem ter a capacidade de modificá-los, 

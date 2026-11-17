@@ -24,16 +24,16 @@ fn main() {
         // Informa ao usuário o número da tentativa atual.
         println!("Tentativa {}/5. Consegue Adivinhar o Número Secreto? Digite Um Número:", tentativa);
 
-        // Declara uma variável mutável `dsanum` para armazenar a entrada do usuário.
-        let mut dsanum = String::new();
+        // Declara uma variável mutável `numero` para armazenar a entrada do usuário.
+        let mut numero = String::new();
 
-        // Lê uma linha do terminal e armazena na variável `dsanum`.
+        // Lê uma linha do terminal e armazena na variável `numero`.
         io::stdin()
-            .read_line(&mut dsanum)
+            .read_line(&mut numero)
             .expect("Falha ao ler o input");
 
         // Tenta converter a entrada em um número inteiro de 32 bits.
-        let dsanum: u32 = match dsanum.trim().parse() {
+        let numero: u32 = match numero.trim().parse() {
             Ok(num) => num,
             Err(_) => {
                 println!("Valor Inválido. Por favor, digite um número válido.");
@@ -42,7 +42,7 @@ fn main() {
         };
 
         // Compara o palpite com o número secreto e imprime uma mensagem correspondente.
-        match dsanum.cmp(&secret_number) {
+        match numero.cmp(&secret_number) {
             Ordering::Less => println!("Você digitou um número menor que o número secreto!"),
             Ordering::Greater => println!("Você digitou um número maior que o número secreto!"),
             Ordering::Equal => {

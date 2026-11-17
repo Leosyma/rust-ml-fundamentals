@@ -31,15 +31,15 @@ fn main() {
     let dataset = DatasetBase::new(x.clone(), y.clone());
 
     // Inicializando o modelo de regressão linear
-    let modelo_dsa = LinearRegression::default();
+    let modelo = LinearRegression::default();
 
     // Treinando o modelo com os dados
-    let modelo_dsa = modelo_dsa.fit(&dataset).expect("Erro ao treinar o modelo");
+    let modelo = modelo.fit(&dataset).expect("Erro ao treinar o modelo");
 
     // Testando o modelo com novos dados
     let x_test = array![[5.2, 6.1], [6.3, 7.4]];
     let y_test_real = array![11.0, 13.0];  // Valores reais para comparação
-    let y_test_pred = modelo_dsa.predict(&x_test);
+    let y_test_pred = modelo.predict(&x_test);
 
     // Arredondando as previsões
     let y_test_pred_rounded = y_test_pred.mapv(|x: f64| x.round());

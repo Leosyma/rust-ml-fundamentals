@@ -10,7 +10,7 @@ use std::io::{self, Write, Read};
 use std::fs;
 
 // Função que cria um arquivo e grava o conteúdo especificado
-fn dsa_cria_grava_arquivo(filename: &str, content: &str) -> io::Result<()> {
+fn cria_grava_arquivo(filename: &str, content: &str) -> io::Result<()> {
 
     // Cria ou substitui o arquivo especificado por filename
     let mut file = File::create(filename)?;
@@ -23,7 +23,7 @@ fn dsa_cria_grava_arquivo(filename: &str, content: &str) -> io::Result<()> {
 }
 
 // Função que lê o conteúdo de um arquivo e retorna como uma String
-fn dsa_le_arquivo(filename: &str) -> io::Result<String> {
+fn le_arquivo(filename: &str) -> io::Result<String> {
 
     // Abre o arquivo especificado por filename
     let mut file = File::open(filename)?;
@@ -39,7 +39,7 @@ fn dsa_le_arquivo(filename: &str) -> io::Result<String> {
 }
 
 // Função que deleta o arquivo especificado
-fn dsa_deleta_arquivo(filename: &str) -> io::Result<()> {
+fn deleta_arquivo(filename: &str) -> io::Result<()> {
 
     // Remove o arquivo especificado por filename
     fs::remove_file(filename)?;
@@ -55,18 +55,18 @@ fn main() -> io::Result<()> {
     let filename = "src/exemplo.txt";
     
     // Conteúdo a ser escrito no arquivo
-    let content = "Hello, Aprendendo Rust com a DSA!";
+    let content = "Hello, Aprendendo Rust!";
 
     // Cria o arquivo e grava o conteúdo
-    dsa_cria_grava_arquivo(filename, content)?;
+    cria_grava_arquivo(filename, content)?;
     println!("Arquivo criado e conteúdo gravado.");
 
     // Lê o conteúdo do arquivo
-    let contents = dsa_le_arquivo(filename)?;
+    let contents = le_arquivo(filename)?;
     println!("Conteúdo do arquivo: {}", contents);
 
     // Deleta o arquivo
-    dsa_deleta_arquivo(filename)?;
+    deleta_arquivo(filename)?;
     println!("Arquivo deletado.");
 
     // Retorna Ok se todas as operações forem bem-sucedidas
